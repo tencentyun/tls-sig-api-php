@@ -1,0 +1,18 @@
+{
+    "name": "tencent/tls-sig-api",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "okhowang(王沛文)",
+            "email": "okhowang@tencent.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^4"
+    },
+    "autoload": {
+        "psr-4": {"Tencent\\": "src/"}
+    }
+}
