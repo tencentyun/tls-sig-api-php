@@ -33,3 +33,13 @@ $api->SetPrivateKey($private);
 $sig = $api->genSig('xiaojun', 24*3600*180);
 var_export($sig);
 ```
+
+### 源代码集成
+```php
+require 'vendor/autoload.php';
+```
+直接上面的 ```require``` 语句替换为下面的
+```php
+require "TLSSigAPI.php";
+```
+注意语句的路径需要随着 api 文件的存放路径而修改。
