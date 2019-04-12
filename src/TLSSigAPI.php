@@ -40,7 +40,8 @@ class TLSSigAPI {
     public function setPrivateKey($private_key) {
         $this->private_key = openssl_pkey_get_private($private_key);
         if ($this->private_key === false) {
-            throw new \Exception(openssl_error_string());
+            $error = error_get_last();
+            throw new \Exception($error['message'], $error['type']);
         }
         return true;
     }
