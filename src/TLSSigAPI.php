@@ -54,7 +54,8 @@ class TLSSigAPI {
     public function setPublicKey($public_key) {
         $this->public_key = openssl_pkey_get_public($public_key);
         if ($this->public_key === false) {
-            throw new \Exception(openssl_error_string());
+            $error = error_get_last();
+            throw new \Exception($error['message'], $error['type']);
         }
         return true;
     }
